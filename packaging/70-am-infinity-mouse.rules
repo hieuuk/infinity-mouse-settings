@@ -1,0 +1,3 @@
+# AngryMiao AM Infinity mouse: let the signed-in user change its settings
+KERNEL=="hidraw*", ATTRS{idVendor}=="0e8d", ATTRS{idProduct}=="0703", MODE="0660", GROUP="plugdev", TAG+="uaccess"
+KERNEL=="hidraw*", ATTRS{idVendor}=="0e8d", ATTRS{idProduct}=="0880", MODE="0660", GROUP="plugdev", TAG+="uaccess"

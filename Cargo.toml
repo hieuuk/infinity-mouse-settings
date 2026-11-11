@@ -1,0 +1,17 @@
+[package]
+name = "infinity-mouse-settings"
+version = "0.1.0"
+edition = "2021"
+description = "Unofficial Linux settings app for the AngryMiao AM Infinity mouse"
+
+[[bin]]
+name = "infinity-mouse-settings"
+path = "src/main.rs"
+
+[dependencies]
+eframe = "0.36"
+libc = "0.2"
+png = "0.18"
+
+[profile.release]
+opt-level = 3
