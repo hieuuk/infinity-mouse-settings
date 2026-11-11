@@ -3,6 +3,7 @@ name = "infinity-mouse-settings"
 version = "0.1.0"
 edition = "2021"
 description = "Unofficial Linux settings app for the AngryMiao AM Infinity mouse"
+license = "MIT"
 
 [[bin]]
 name = "infinity-mouse-settings"

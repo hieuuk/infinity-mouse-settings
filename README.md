@@ -78,3 +78,7 @@ and value, and where each one was learned.
 
 [egui / eframe](https://github.com/emilk/egui), [libc](https://github.com/rust-lang/libc) and
 [png](https://github.com/image-rs/image-png). Each is licensed under MIT or Apache-2.0.
+
+## License
+
+MIT. See [LICENSE](LICENSE).
