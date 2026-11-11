@@ -16,3 +16,4 @@ png = "0.18"
 
 [profile.release]
 opt-level = 3
+strip = true

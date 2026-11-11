@@ -29,35 +29,40 @@ Lighting colours, macro editing, wireless sleep timers and firmware updates.
 
 Only the wired (USB cable) connection has been tested. The 2.4 GHz receiver and Bluetooth have not.
 
-## Build
+## Install
 
-You need Rust: install it from <https://rustup.rs>.
+Download the latest version from the
+[Releases page](https://github.com/hieuuk/infinity-mouse-settings/releases/latest).
+It works on Ubuntu 22.04 or newer (64-bit PC).
+
+### Ubuntu, Debian, Linux Mint, Pop!_OS
+
+1. Download `infinity-mouse-settings_<version>_amd64.deb`.
+2. Install it from a terminal:
+
+   ```sh
+   sudo apt install ./infinity-mouse-settings_*_amd64.deb
+   ```
+
+3. Unplug the mouse and plug it back in.
+4. Open **Infinity Mouse Settings** from your app menu.
+
+The package also installs the access rule the app needs to talk to the mouse
+(`/usr/lib/udev/rules.d/70-am-infinity-mouse.rules`), so it works straight away.
+
+To uninstall:
 
 ```sh
-cargo build --release
-./target/release/infinity-mouse-settings
+sudo apt remove infinity-mouse-settings
 ```
 
-Tested on Ubuntu. It should work on other Linux distributions that use udev.
+### Other Linux distributions
 
-## First run: allow access to the mouse
-
-By default, Linux only lets the administrator (root) send settings to the mouse.
-On first run the app shows an **Allow access** button. It installs this rule file
-(you are asked for your password once):
-
-```
-/etc/udev/rules.d/70-am-infinity-mouse.rules
-```
-
-To install the rule yourself instead:
-
-```sh
-sudo cp packaging/70-am-infinity-mouse.rules /etc/udev/rules.d/
-sudo udevadm control --reload-rules && sudo udevadm trigger
-```
-
-To undo it, delete that file.
+1. Download `infinity-mouse-settings-<version>-x86_64-linux.tar.gz` and unpack it.
+2. Run `./infinity-mouse-settings` from the unpacked folder.
+3. The first time, click **Allow access** in the app. It installs the access rule
+   (`/etc/udev/rules.d/70-am-infinity-mouse.rules`) and asks for your password once.
+   To undo this, delete that file.
 
 ## Command-line options
 
@@ -73,6 +78,11 @@ To undo it, delete that file.
 The app talks to the mouse over its USB HID settings interface (`/dev/hidraw*`). It uses
 the same commands as AM Master. [docs/PROTOCOL.md](docs/PROTOCOL.md) lists every command
 and value, and where each one was learned.
+
+## Building from source
+
+Install Rust from <https://rustup.rs>, then run `cargo build --release`.
+To build the release packages, run `packaging/build-release.sh`.
 
 ## Libraries
 

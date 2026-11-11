@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Name=Infinity Mouse Settings
+GenericName=Mouse Settings
+Comment=Change DPI, buttons and polling rate on the AngryMiao AM Infinity mouse (unofficial)
+Exec=infinity-mouse-settings
+Icon=infinity-mouse-settings
+Terminal=false
+Categories=Settings;HardwareSettings;
+Keywords=mouse;dpi;angrymiao;am infinity;polling;buttons;
+StartupWMClass=infinity-mouse-settings
+StartupNotify=true
